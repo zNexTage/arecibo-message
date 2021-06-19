@@ -97,17 +97,30 @@ function App() {
   }
 
   return (
-    <div className={styleClasses.AreciboContainer}>
-      {ARECIBO.map((rows) => (
-        <Row>
-          {rows.map((column) => (
-            <AreciboSquare
-              color={getAreciboColorByPosition(`${column}`)}
-            />
-          ))}
-        </Row>
-      ))}
-    </div>
+    <>
+      <header>
+        <h1 className={styleClasses.AreciboTitle}>
+          Mensagem de Arecibo feito com React
+        </h1>
+      </header>
+      <div className={styleClasses.AreciboContainer}>
+
+        {ARECIBO.map((rows) => (
+          <Row>
+            {rows.map((column) => (
+              <AreciboSquare
+                color={getAreciboColorByPosition(`${column}`)}
+              />
+            ))}
+          </Row>
+        ))}
+      </div>
+      <footer className={styleClasses.AreciboFooter}>
+        <h2>
+          Feito em: 19/06/2021 - 18:40
+        </h2>
+      </footer>
+    </>
   );
 }
 
